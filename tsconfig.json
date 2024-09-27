@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "es6",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "strict": true,
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "allowJs": false
+    },
+    "include": [
+    "src"
+  ]
+}

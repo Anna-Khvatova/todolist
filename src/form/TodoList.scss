@@ -1,0 +1,194 @@
+.todo-list {
+    
+    &__input {
+        width: 100%;
+        height: 55px;
+        /* border-radius: 15px; */
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: all 0.3s;
+        border: transparent;
+        font-size: 1rem;
+
+        &:hover,
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: transparent;
+            outline: 1px solid rgba(255, 255, 255, 0.85);
+        }
+    }
+
+    &__ul {
+        margin: 2rem 0;
+        padding: 0;
+    }
+
+    &__li {
+        list-style: none;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.85);
+        margin: 0 0 0.8rem;
+        color: #2a2a2a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        min-height: 55px;
+
+        &.done {
+            background-color: rgba(255, 255, 255, 0.5);
+
+            .todo-list__text {
+                text-decoration: line-through;
+                color: #606060;
+            }
+        }
+    }
+
+    &__text {
+        margin: 0;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__delete {
+        background-color: transparent;
+        border: none;
+        transition: all 0.3s;
+        margin: 0 0 0 10x;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+            content: "\2573";
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #ffffff;
+        }
+    }
+
+    &__edit {
+        background-color: transparent;
+        border: none;
+        transition: all 0.3s;
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+            content: "\270e";
+            font-size: 20px;
+            color: #3d3d3d;
+            transform: scale(-1, 1);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #ffffff;
+        }
+    }
+
+    &__input-edit {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        left: 0;
+        top: 0;
+        border: initial;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+
+        & + .todo-list__save {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+    }
+
+    &__save {
+        background-color: transparent;
+        border: none;
+        transition: all 0.3s;
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+            content: "\2714";
+            font-size: 20px;
+            color: #3d3d3d;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #ffffff;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 680px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        p {
+            margin: 0.7rem 0;
+
+            @media screen and (max-width: 680px) {
+                margin: 0;
+            }
+
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__clear {
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 0 0 0 auto;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus {
+            color: #ff6666;
+            background-color: #ffffff;
+        }
+
+        @media screen and (max-width: 680px) {
+            margin: 0;
+        }
+    }
+}
